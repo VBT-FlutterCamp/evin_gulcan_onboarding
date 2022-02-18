@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:onboarding/core/constants/padding_constants.dart';
 import '../../../core/constants/colors_constants.dart';
+import '../../../core/constants/size_constant.dart';
 import '../models/onboard_model.dart';
 import '../widgets/next_button.dart';
 import '../widgets/skip_button.dart';
@@ -37,14 +39,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   itemBuilder: (context, index) {
                     return Column(children: [
                       const SizedBox(
-                        height: 50,
+                        height: large * 5,
                       ),
                       SvgPicture.asset(
                         models[index].image,
-                        height: 250,
+                        height: xLarge5x * 5,
                       ),
                       const SizedBox(
-                        height: 50,
+                        height: large * 5,
                       ),
                       Container(
                         child: Column(
@@ -56,7 +58,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 (index) => buildSliderNav(index: index),
                               ),
                             ),
-                            const SizedBox(height: kDefaultPadding / 3),
+                            const SizedBox(height: xLarge2x / 3),
                             Text(
                               models[index].title,
                               style: const TextStyle(
@@ -64,10 +66,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   color: kTextColor,
                                   fontWeight: FontWeight.bold),
                             ),
-                            const SizedBox(height: kDefaultPadding / 2),
+                            const SizedBox(height: xLarge2x / 2),
                             Padding(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: kDefaultPadding * 2),
+                                  horizontal: xLarge2x * 2),
                               child: Text(
                                 models[index].description,
                                 textAlign: TextAlign.center,
@@ -83,7 +85,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 30),
+                padding: PaddingConst.padOnly30,
                 child: _buildButtonRow(
                     selectedSlider: selectedSlider,
                     sliderController: sliderController),
@@ -99,8 +101,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       margin: const EdgeInsets.only(right: 5),
-      height: kDefaultPadding / 2,
-      width: kDefaultPadding / 2,
+      height: xLarge2x / 2,
+      width: xLarge2x / 2,
       decoration: BoxDecoration(
           color:
               selectedSlider == index ? kPrimaryColor : const Color(0xFFD7D7D7),
@@ -134,7 +136,7 @@ class _buildButtonRow extends StatelessWidget {
           },
         ),
         const SizedBox(
-          width: kDefaultPadding / 4,
+          width: xLarge2x / 4,
         ),
         NextButton(
           tapEvent: () {

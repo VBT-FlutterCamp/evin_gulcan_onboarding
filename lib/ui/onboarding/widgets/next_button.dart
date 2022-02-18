@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/constants/app_strings.dart';
 import '../../../core/constants/colors_constants.dart';
-import '../../../product/text/app_strings.dart';
 
 class NextButton extends StatelessWidget {
   const NextButton({Key? key, required this.tapEvent}) : super(key: key);
