@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:onboarding/core/constants/app_strings.dart';
-import 'package:onboarding/core/constants/padding_constants.dart';
+
 import 'package:onboarding/ui/login/widgets/custom_text_from_field.dart';
-import '../../core/constants/colors_constants.dart';
-import '../../core/constants/size_constant.dart';
+
+import '../../product/companent/app_colors_constant.dart';
+import '../../product/companent/app_padding_constant.dart';
+import '../../product/companent/app_size_constant.dart';
+import '../../product/companent/app_text_constant.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -45,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  SizedBox(height: xLarge2x),
+                  const SizedBox(height: xLarge2x),
                   Expanded(
                     flex: 1,
                     child: Padding(

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:onboarding/core/constants/padding_constants.dart';
-import '../../../core/constants/colors_constants.dart';
-import '../../../core/constants/size_constant.dart';
+import 'package:kartal/kartal.dart';
+
+import 'package:onboarding/product/companent/app_text_style.dart';
+
+import '../../../product/companent/app_colors_constant.dart';
+import '../../../product/companent/app_padding_constant.dart';
+import '../../../product/companent/app_size_constant.dart';
 import '../models/onboard_model.dart';
 import '../widgets/next_button.dart';
 import '../widgets/skip_button.dart';
@@ -61,10 +65,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             const SizedBox(height: xLarge2x / 3),
                             Text(
                               models[index].title,
-                              style: const TextStyle(
-                                  fontSize: 24,
-                                  color: kTextColor,
-                                  fontWeight: FontWeight.bold),
+                              style: StyleText().titleTextStyle,
                             ),
                             const SizedBox(height: xLarge2x / 2),
                             Padding(
@@ -73,8 +74,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               child: Text(
                                 models[index].description,
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    color: kTextLightColor, fontSize: 18),
+                                style: StyleText().descTextStyle,
                               ),
                             )
                           ],
@@ -86,7 +86,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
               Padding(
                 padding: PaddingConst.padOnly30,
-                child: _buildButtonRow(
+                child: BuildButtonRow(
                     selectedSlider: selectedSlider,
                     sliderController: sliderController),
               ),
@@ -111,8 +111,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 }
 
-class _buildButtonRow extends StatelessWidget {
-  const _buildButtonRow({
+class BuildButtonRow extends StatelessWidget {
+  const BuildButtonRow({
     Key? key,
     required this.selectedSlider,
     required this.sliderController,

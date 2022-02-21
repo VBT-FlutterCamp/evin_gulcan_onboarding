@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
-import 'package:onboarding/core/constants/colors_constants.dart';
+
+import '../../../product/companent/app_colors_constant.dart';
+import '../../../product/companent/app_size_constant.dart';
 
 class CustomTextFormField extends StatefulWidget {
   final TextEditingController controller;
@@ -37,8 +39,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       child: Container(
         decoration: BoxDecoration(
             border: widget.focusNode.hasFocus
-                ? Border(
-                    left: BorderSide(width: 4, color: kBlueColor),
+                ? const Border(
+                    left: BorderSide(width: normal, color: kBlueColor),
                   )
                 : null),
         child: Padding(
